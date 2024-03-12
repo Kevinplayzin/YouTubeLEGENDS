@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypixel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: gold;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .announcements, .members, .promotions {
+            width: 30%;
+            float: left;
+            padding: 20px;
+        }
+        .announcements, .promotions {
+            background-color: red;
+            color: white; /* Change text color in announcements and promotions */
+        }
+        .members {
+            background-color: gold;
+        }
+        .password-protect {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .password-input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        .password-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: gold;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Hypixel</h1>
+</div>
+
+<div class="container">
+    <div class="announcements">
+        <h2>Announcements</h2>
+        <ul>
+            <li>Announcement 1</li>
+            <li>Announcement 2</li>
+            <li>Announcement 3</li>
+            <!-- Add more announcements as needed -->
+        </ul>
+    </div>
+
+    <div class="members">
+        <h2>Members List</h2>
+        <ul>
+            <!-- Add members here -->
+            <li>Member 1</li>
+            <li>Member 2</li>
+            <!-- Repeat for 50 members -->
+        </ul>
+    </div>
+
+    <div class="promotions">
+        <h2>Promotion Requests</h2>
+        <ul>
+            <!-- Add promotion requests here -->
+            <li>Promotion Request 1</li>
+            <li>Promotion Request 2</li>
+            <!-- Add more requests as needed -->
+        </ul>
+    </div>
+</div>
+
+<div class="password-protect" id="passwordProtection">
+    <form id="passwordForm">
+        <input type="password" id="passwordInput" class="password-input" placeholder="Enter password" required>
+        <button type="submit" class="password-button">Submit</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById("passwordForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission behavior
+        var password = document.getElementById("passwordInput").value;
+        if (password === "YouTubeLEGENDS") {
+            document.getElementById("passwordProtection").style.display = "none";
+        } else {
+            alert("Incorrect password!");
+        }
+    });
+</script>
+
+</body>
+</html>
